@@ -1,11 +1,11 @@
 import CoinSystems
-CoinSystems.InitCoinSets
-CoinSystems.InitSmallMonetaryVals
+CoinSystems.InitCoinSets()
+CoinSystems.InitSmallMonetaryVals()
 
 def MakeChange(value, coinSystem):
     change = []
     while (value > 0):
-        for i in range(len(coinSystem),0,1):
+        for i in range(len(coinSystem)-1,-1,-1):
             if(value - coinSystem[i]) > 0:
                 value = value - coinSystem[i]
                 change.append(coinSystem[i])
@@ -13,4 +13,4 @@ def MakeChange(value, coinSystem):
                 continue
     return change
 
-MakeChange( listOfSmallMonetaryValues[0], americanCoinsExtended)
+MakeChange( CoinSystems.listOfSmallMonetaryValues[0], CoinSystems.americanCoinsExtended)

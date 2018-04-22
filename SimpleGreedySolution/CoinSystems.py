@@ -7,10 +7,6 @@ def InitCoinSets():
     americanCurrency = list(set(americanCoins).union({5,10,20}))
     return True
 
-global americanCoinsExtended = americanCoinsExtended
-global americanCoins = americanCoins
-global americanCurrencyExtended = americanCurrencyExtended
-global americanCurrency =a mericanCurrency
 
 def InitSmallMonetaryVals():
     random.seed(True)
@@ -18,5 +14,3 @@ def InitSmallMonetaryVals():
     for i in range (0,10):
         listOfSmallMonetaryValues.append(random.uniform(0,3))
     return True
-
-global listOfSmallMonetaryValues = listOfSmallMonetaryValues

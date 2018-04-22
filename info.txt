@@ -1,0 +1,15 @@
+https://www.hackerearth.com/practice/notes/change-making-problem/
+
+Definition:
+Given a set of coin denominations A={a0, a1,...,an} and a target amount T, find a partition of A which will meet the target value T
+
+Cashier's Problem:
+Pay with as few coins as possible
+
+Greedy Problem:
+In certain situations (particularly if I only have a certain quantity of different denominations), if I choose the incorrect element to start building my partition with, I will be unable to pay the exact amount w/o overpaying.
+
+Dynamic Programming  (simple):
+
+
+Dynamic Programming (probabilistic convolution tree):

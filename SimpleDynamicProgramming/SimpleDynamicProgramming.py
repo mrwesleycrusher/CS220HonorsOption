@@ -22,9 +22,9 @@ def mkCh(amount, coins):
             root.addChild(TreeNode(coins[i]))
     #call helper method to build tree of all possible payments from root
     for i in range(0, len(root.children), 1):
-        mkChHelper(root.children[i], amount-root.children[i].getValue, coins)
+        mkChHelper(root.children[i], amount-root.children[i].getValue(), coins)
 
-    return getShortestDepth(root)[0]
+    return getShortestDepth(root)[0][:-1]
 
 def getShortestDepth(root):
     if(root.children==[]):
@@ -35,20 +35,22 @@ def getShortestDepth(root):
         if(current[1]<smallest[1]):
             smallest=current
     smallest[0].append(root.value)
-    print(smallest[0])
+    #print(smallest[0])
     return [smallest[0], smallest[1]+1]
 
 def mkChHelper(node, amount, coins):
     for i in range(0, len(coins), 1):
         if amount-coins[i]>=0:
-            node.getChildren.append(TreeNode(coins[i]))
+            newChild = TreeNode(coins[i])
+            node.getChildren().append(newChild)
+            mkChHelper(newChild, amount-coins[i], coins)
     return None
 
 if __name__ == "__main__":
     #coinset used
-    coins = [1,5,10,25]
+    coins = [1,3,4]
     #amount needed to pay, in cents
-    amount = 41
+    amount = 6
     #make change
     change = mkCh(amount, coins)
     #output

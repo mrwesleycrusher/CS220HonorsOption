@@ -1,4 +1,5 @@
 https://www.hackerearth.com/practice/notes/change-making-problem/
+http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0091507
 
 Definition:
 Given a set of coin denominations A={a0, a1,...,an} and a target amount T, find a partition of A which will meet the target value T

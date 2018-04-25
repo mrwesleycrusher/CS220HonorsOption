@@ -10,6 +10,7 @@ Greedy Problem:
 In certain situations (particularly if I only have a certain quantity of different denominations), if I choose the incorrect element to start building my partition with, I will be unable to pay the exact amount w/o overpaying.
 
 Dynamic Programming  (simple):
-
+This solution creates a tree (a rather bushy tree), that any path from root to a leaf will create a "way" of paying the amount, with the shortest path from root to a leaf being the way to pay the amount with the fewest coins.
 
 Dynamic Programming (probabilistic convolution tree):
+Instead of creating a tree that contains all of the possible permutations for paying the amount, this method creates all the sets of a single coin, followed by all the sets of two coins, then of three, etc. and then checks to see if any of the sets pay the specified amount.

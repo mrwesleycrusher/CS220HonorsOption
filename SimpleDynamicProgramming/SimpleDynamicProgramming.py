@@ -1,4 +1,5 @@
 import sys
+#treenode object
 class TreeNode(object):
     def __init__(self, value):
         self.value = value
@@ -26,18 +27,23 @@ def mkCh(amount, coins):
 
     return getShortestDepth(root)[0][:-1]
 
+#optimizes the solution by finding the lowest depth in the tree
 def getShortestDepth(root):
+    #if leaf node return value
     if(root.children==[]):
         return [[root.value], 1]
+    #otherwise grab leftmost child
     smallest = getShortestDepth(root.children[0])
+    #find the shortest subtree, with each child being a root
     for i in range(1, len(root.children),1):
         current = getShortestDepth(root.children[i])
         if(current[1]<smallest[1]):
             smallest=current
     smallest[0].append(root.value)
-    #print(smallest[0])
+    #return the shortest subtree you find
     return [smallest[0], smallest[1]+1]
 
+#build tree of all possible ways of paying the amount
 def mkChHelper(node, amount, coins):
     for i in range(0, len(coins), 1):
         if amount-coins[i]>=0:
